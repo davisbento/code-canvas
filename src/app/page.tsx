@@ -1,12 +1,26 @@
+import { PropsWithChildren } from 'react';
+import CodeDescription from './components/CodeDescription';
 import CodeSnippet from './components/CodeSnippet';
 import GenerateImageButton from './components/GenerateImageButton';
 import PrettifyCodeButton from './components/PrettifyCodeButton';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcher from './components/ThemeSwitcher';
 
+const Container = ({ children }: PropsWithChildren) => {
+	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;
+};
+
+const Actions = ({ children }: PropsWithChildren) => {
+	return <div className='flex md:flex-col flex-row items-center gap-4'>{children}</div>;
+};
+
+const CodeContainer = ({ children }: PropsWithChildren) => {
+	return <div className='flex flex-col gap-4 w-full'>{children}</div>;
+};
+
 export default function Home() {
 	return (
-		<main className='flex min-h-screen flex-col items-center  w-full font-mono bg-slate-200 dark:bg-slate-800 '>
+		<main className='flex min-h-screen flex-col items-center w-full font-mono bg-slate-200 dark:bg-slate-800 '>
 			<div className='flex items-end w-full p-4'>
 				<ThemeSwitcher />
 			</div>
@@ -18,21 +32,25 @@ export default function Home() {
 				</p>
 			</div>
 
-			<div className='flex flex-col items-center justify-between gap-16 w-2/3'>
-				<div className='flex flex-col items-center gap-4 p-4 w-full'>
-					<CodeSnippet />
+			<Container>
+				<div className='flex md:flex-row flex-col items-center gap-4 w-full'>
+					<CodeContainer>
+						<CodeDescription />
 
+						<CodeSnippet />
+					</CodeContainer>
+
+					<Actions>
+						<GenerateImageButton />
+
+						<PrettifyCodeButton />
+					</Actions>
+				</div>
+
+				<div className='flex justify-center w-full'>
 					<SyntaxHighlighterSnippet />
 				</div>
-
-				<hr className='w-full border-t-2 border-slate-300 dark:border-slate-700' />
-
-				<div className='flex items-center gap-4'>
-					<GenerateImageButton />
-
-					<PrettifyCodeButton />
-				</div>
-			</div>
+			</Container>
 		</main>
 	);
 }

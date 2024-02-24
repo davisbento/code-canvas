@@ -11,9 +11,17 @@ const useCodeState = () => {
 		});
 	};
 
+	const handleChangeDescription = (description: string) => {
+		setCodeAtom({
+			...codeAtom,
+			description
+		});
+	};
+
 	return {
 		codeAtom,
-		handleChangeCode
+		handleChangeCode,
+		handleChangeDescription
 	};
 };
 

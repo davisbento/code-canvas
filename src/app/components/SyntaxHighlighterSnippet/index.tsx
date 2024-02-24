@@ -8,8 +8,9 @@ const SyntaxHighlighterSnippet = () => {
 	const { codeAtom } = useCodeState();
 
 	return (
-		<div id='image-to-generate' className='p-4 rounded-md bg-yellow-100'>
-			{codeAtom.description && <p className='text-xs text-yellow-700'>{codeAtom.description}</p>}
+		<div id='image-to-generate' className='p-4 rounded-md bg-yellow-100 w-2/3'>
+			{codeAtom.description && <p className='text-2xl text-yellow-700'>{codeAtom.description}</p>}
+
 			<SyntaxHighlighter language='jsx' style={okaidia} wrapLines>
 				{codeAtom.code || 'Hello World!'}
 			</SyntaxHighlighter>

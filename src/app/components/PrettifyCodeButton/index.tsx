@@ -13,7 +13,7 @@ const PrettifyCodeButton = () => {
 
 	return (
 		<button className='p-4 border-yellow-100 bg-yellow-200 rounded-md' onClick={() => handleMakeCodePretty()}>
-			<span className='text-yellow-700'>Formatar Código</span>
+			<span className='text-yellow-700'>Prettify</span>
 		</button>
 	);
 };
