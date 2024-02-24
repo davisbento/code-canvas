@@ -5,6 +5,8 @@ import GenerateImageButton from './components/GenerateImageButton';
 import PrettifyCodeButton from './components/PrettifyCodeButton';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcher from './components/ThemeSwitcher';
+import StyleSwitcher from './components/StyleSwitcher';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;
@@ -35,6 +37,11 @@ export default function Home() {
 			<Container>
 				<div className='flex md:flex-row flex-col items-center gap-4 w-full'>
 					<CodeContainer>
+						<div className='flex gap-4'>
+							<StyleSwitcher />
+							<LanguageSwitcher />
+						</div>
+
 						<CodeDescription />
 
 						<CodeSnippet />

@@ -11,7 +11,7 @@ const CodeSnippet = ({}) => {
 				placeholder='Digite seu código aqui...'
 				value={codeAtom.code}
 				onChange={(e) => handleChangeCode(e.target.value)}
-				className='w-full h-64 p-4 text-lg font-mono text-white focus:outline-none overflow-hidden bg-gray-800'
+				className='w-full h-64 p-4 text-lg text-white focus:outline-none overflow-hidden bg-gray-800'
 			/>
 		</div>
 	);
