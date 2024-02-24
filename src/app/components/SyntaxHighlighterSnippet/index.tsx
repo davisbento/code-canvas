@@ -9,7 +9,7 @@ const SyntaxHighlighterSnippet = () => {
 
 	return (
 		<div id='image-to-generate' className='p-4 rounded-md bg-yellow-100 w-2/3'>
-			{codeAtom.description && <p className='text-2xl text-yellow-700'>{codeAtom.description}</p>}
+			{codeAtom.description && <p className='text-2xl text-yellow-700 text-center'>{codeAtom.description}</p>}
 
 			<SyntaxHighlighter language='jsx' style={okaidia} wrapLines>
 				{codeAtom.code || 'Hello World!'}
