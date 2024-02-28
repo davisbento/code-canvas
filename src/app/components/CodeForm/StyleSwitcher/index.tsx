@@ -21,6 +21,7 @@ const StyleSwitcher = () => {
 			</label>
 			<select
 				name='style'
+				id='style'
 				className='p-2 w-full bg-gray-800 text-white'
 				value={Object.keys(styleOptions).find((style) => styleOptions[style] === styleAtom.highliterStyle)}
 				onChange={(e) => handleChangeStyle(styleOptions[e.target.value])}

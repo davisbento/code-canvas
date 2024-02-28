@@ -12,6 +12,7 @@ const CodeDescription = () => {
 			</label>
 			<input
 				name='description'
+				id='description'
 				className='w-full p-4 text-lg font-mono text-white focus:outline-none overflow-hidden bg-gray-800'
 				type='text'
 				placeholder='Descrição do código (opcional)'

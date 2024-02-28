@@ -14,6 +14,7 @@ const LanguageSwitcher = () => {
 			</label>
 			<select
 				name='language'
+				id='language'
 				className='p-2 w-full bg-gray-800 text-white'
 				value={styleAtom.language}
 				onChange={(e) => handlChangeLanguage(e.target.value as string)}

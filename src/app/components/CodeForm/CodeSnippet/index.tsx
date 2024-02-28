@@ -12,6 +12,7 @@ const CodeSnippet = ({}) => {
 			</label>
 			<textarea
 				name='code'
+				id='code'
 				placeholder='Digite seu código aqui...'
 				value={codeAtom.code}
 				onChange={(e) => handleChangeCode(e.target.value)}
