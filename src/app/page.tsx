@@ -2,11 +2,11 @@ import { PropsWithChildren } from 'react';
 import CodeDescription from './components/CodeDescription';
 import CodeSnippet from './components/CodeSnippet';
 import GenerateImageButton from './components/GenerateImageButton';
+import LanguageSwitcher from './components/LanguageSwitcher';
 import PrettifyCodeButton from './components/PrettifyCodeButton';
+import StyleSwitcher from './components/StyleSwitcher';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcher from './components/ThemeSwitcher';
-import StyleSwitcher from './components/StyleSwitcher';
-import LanguageSwitcher from './components/LanguageSwitcher';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;

@@ -6,7 +6,10 @@ const useTheme = () => {
 	useEffect(() => {
 		if (typeof localStorage === 'undefined') return;
 
-		if (localStorage.getItem('theme') === 'dark') {
+		if (
+			localStorage.getItem('theme') === 'dark' ||
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
 			document.documentElement.classList.add('dark');
 			setTheme('dark');
 		} else {
