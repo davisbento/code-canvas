@@ -4,6 +4,13 @@ import useStyleState from '@/app/hooks/useStyleState';
 
 import { styleOptions } from '@/app/utils/stylesOptions';
 
+const transformStyleText = (style: string) => {
+	// break the camelCase and capitalize the first letter
+	const words = style.split(/(?=[A-Z])/);
+	const capitalizedWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+	return capitalizedWords.join(' ');
+};
+
 const StyleSwitcher = () => {
 	const { styleAtom, handleChangeStyle } = useStyleState();
 
@@ -16,7 +23,7 @@ const StyleSwitcher = () => {
 			>
 				{Object.keys(styleOptions).map((style, index) => (
 					<option key={index} value={style}>
-						{style}
+						{transformStyleText(style)}
 					</option>
 				))}
 			</select>

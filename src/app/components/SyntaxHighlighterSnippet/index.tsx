@@ -9,8 +9,8 @@ const SyntaxHighlighterSnippet = () => {
 	const { styleAtom } = useStyleState();
 
 	return (
-		<div id='image-to-generate' className={`p-4 rounded-lg bg-yellow-100 lg:w-2/3 w-full`}>
-			{codeAtom.description && <p className='text-2xl text-yellow-700 text-center'>{codeAtom.description}</p>}
+		<div id='image-to-generate' className='p-4 rounded-lg bg-yellow-50 lg:w-2/3 w-full'>
+			{codeAtom.description && <p className='text-2xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
 
 			<SyntaxHighlighter
 				language={styleAtom.language}
