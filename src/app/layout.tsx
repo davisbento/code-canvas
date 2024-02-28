@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import './globals.css';
+import { getThemeCookie } from './actions/cookies';
 import Providers from './components/Providers';
+import './globals.css';
+import { Theme } from './utils/theme';
+import { PropsWithChildren } from 'react';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '400' });
 
@@ -10,15 +13,13 @@ export const metadata: Metadata = {
 	description: 'Compartilhe trechos de código com outras pessoas!'
 };
 
-export default function RootLayout({
-	children
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
+	const theme = getThemeCookie();
+
 	return (
-		<html lang='en'>
+		<html lang='en' className={theme} style={{ colorScheme: theme }}>
 			<body className={roboto.className}>
-				<Providers>{children}</Providers>
+				<Providers theme={theme as Theme}>{children}</Providers>
 			</body>
 		</html>
 	);

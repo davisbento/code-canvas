@@ -6,7 +6,7 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import PrettifyCodeButton from './components/PrettifyCodeButton';
 import StyleSwitcher from './components/StyleSwitcher';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
-import ThemeSwitcher from './components/ThemeSwitcher';
+import ThemeSwitcherButton from './components/ThemeSwitcherButton';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;
@@ -24,7 +24,7 @@ export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col items-center w-full font-mono bg-slate-200 dark:bg-slate-800 '>
 			<div className='flex items-end w-full p-4'>
-				<ThemeSwitcher />
+				<ThemeSwitcherButton />
 			</div>
 
 			<div className='flex flex-col items-center gap-4 p-8'>
