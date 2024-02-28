@@ -21,7 +21,7 @@ const PrettifyCodeButton = () => {
 			className='p-4 border-yellow-100 bg-yellow-200 rounded-md disabled:opacity-50'
 			onClick={() => handleMakeCodePretty()}
 		>
-			<span className='text-yellow-700'>Prettify</span>
+			<span className='text-black'>Prettify</span>
 		</button>
 	);
 };

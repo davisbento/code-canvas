@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react';
-import CodeDescription from './components/CodeDescription';
-import CodeSnippet from './components/CodeSnippet';
-import GenerateImageButton from './components/GenerateImageButton';
-import LanguageSwitcher from './components/LanguageSwitcher';
-import PrettifyCodeButton from './components/PrettifyCodeButton';
-import StyleSwitcher from './components/StyleSwitcher';
+import CodeDescription from './components/CodeForm/CodeDescription';
+import CodeSnippet from './components/CodeForm/CodeSnippet';
+import LanguageSwitcher from './components/CodeForm/LanguageSwitcher';
+import StyleSwitcher from './components/CodeForm/StyleSwitcher';
+import GenerateImageButton from './components/ActionButtons/GenerateImageButton';
+import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcherButton from './components/ThemeSwitcherButton';
 

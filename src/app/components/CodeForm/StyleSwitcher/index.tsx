@@ -16,7 +16,11 @@ const StyleSwitcher = () => {
 
 	return (
 		<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700 w-48'>
+			<label className='sr-only' htmlFor='style'>
+				Estilo
+			</label>
 			<select
+				name='style'
 				className='p-2 w-full bg-gray-800 text-white'
 				value={Object.keys(styleOptions).find((style) => styleOptions[style] === styleAtom.highliterStyle)}
 				onChange={(e) => handleChangeStyle(styleOptions[e.target.value])}
