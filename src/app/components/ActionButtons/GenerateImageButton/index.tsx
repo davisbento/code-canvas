@@ -19,9 +19,9 @@ const GenerateImageButton = () => {
 			URL.revokeObjectURL(image);
 		} catch (error) {
 			console.error('Error generating image:', error);
+		} finally {
+			setExporting(false);
 		}
-
-		setExporting(false);
 	};
 
 	return (
