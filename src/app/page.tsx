@@ -27,11 +27,9 @@ export default function Home() {
 				<ThemeSwitcherButton />
 			</div>
 
-			<div className='flex flex-col items-center gap-4 p-8'>
-				<h1 className='text-6xl font-bold dark:text-white text-black'>CodeCanvas</h1>
-				<p className='md:text-xl text-md text-center mb-8 dark:text-white text-black'>
-					Bem-vindo ao CodeCanvas! Aqui você pode compartilhar trechos de código com outras pessoas!
-				</p>
+			<div className='flex flex-col items-center gap-4 md:pb-16 pb-8'>
+				<h1 className='md:text-6xl text-5xl font-bold dark:text-white text-black'>CodeCanvas</h1>
+				<p>Bem-vindo ao CodeCanvas! Aqui você pode gerar imagens de código com destaque de sintaxe</p>
 			</div>
 
 			<Container>
