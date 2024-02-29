@@ -3,14 +3,17 @@
 import useCodeState from '@/app/hooks/useCodeState';
 import useStyleState from '@/app/hooks/useStyleState';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import LogoFinder from '../LogoFinder';
 
 const SyntaxHighlighterSnippet = () => {
 	const { codeAtom } = useCodeState();
 	const { styleAtom } = useStyleState();
 
 	return (
-		<div id='image-to-generate' className='p-4 rounded-lg bg-yellow-50 lg:w-2/3 w-full'>
+		<div id='image-to-generate' className='p-4 rounded-lg bg-yellow-50 lg:w-2/3 w-full relative'>
 			{codeAtom.description && <p className='text-2xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
+
+			<LogoFinder />
 
 			<SyntaxHighlighter
 				language={styleAtom.language}

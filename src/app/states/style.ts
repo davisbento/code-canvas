@@ -5,6 +5,7 @@ export const styleState = atom({
 	key: 'styleState',
 	default: {
 		highliterStyle: styleOptions.okaida,
-		language: 'jsx'
+		language: 'jsx',
+		addLogo: false
 	}
 });

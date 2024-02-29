@@ -20,10 +20,18 @@ const useStyleState = () => {
 		});
 	};
 
+	const handleToggleAddLogo = () => {
+		setStyleAtom({
+			...styleAtom,
+			addLogo: !styleAtom.addLogo
+		});
+	};
+
 	return {
 		styleAtom,
 		handleChangeStyle,
-		handlChangeLanguage
+		handlChangeLanguage,
+		handleToggleAddLogo
 	};
 };
 
