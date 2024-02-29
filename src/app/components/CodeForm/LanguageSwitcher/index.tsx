@@ -10,44 +10,37 @@ const LanguageSwitcher = () => {
 	return (
 		<div className='flex items-center gap-4'>
 			<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700'>
-				<div>
-					<label className='sr-only' htmlFor='language'>
-						Linguagem
-					</label>
-					<select
-						name='language'
-						id='language'
-						className='p-2 w-full bg-gray-800 text-white'
-						value={styleAtom.language}
-						onChange={(e) => handlChangeLanguage(e.target.value as string)}
-					>
-						{languageOptions.map((lang, index) => (
-							<option key={index} value={lang}>
-								{lang}
-							</option>
-						))}
-					</select>
-				</div>
+				<label className='sr-only' htmlFor='language'>
+					Linguagem
+				</label>
+				<select
+					name='language'
+					id='language'
+					className='p-2 w-full bg-gray-800 text-white'
+					value={styleAtom.language}
+					onChange={(e) => handlChangeLanguage(e.target.value as string)}
+				>
+					{languageOptions.map((lang, index) => (
+						<option key={index} value={lang}>
+							{lang}
+						</option>
+					))}
+				</select>
 			</div>
 
-			<div>
-				<label className='sr-only' htmlFor='addLogo'>
-					Adicionar logo
+			<div className='flex items-center space-x-2'>
+				<input
+					type='checkbox'
+					id='addLogo'
+					name='addLogo'
+					className='rounded-md'
+					checked={styleAtom.addLogo}
+					onChange={() => handleToggleAddLogo()}
+				/>
+				<label htmlFor='addLogo' className='text-white'>
+					<span className='md:hidden'>Logo</span>
+					<span className='hidden md:inline'>Adicionar logo</span>
 				</label>
-
-				<div className='flex items-center space-x-2'>
-					<input
-						type='checkbox'
-						id='addLogo'
-						name='addLogo'
-						className='rounded-md'
-						checked={styleAtom.addLogo}
-						onChange={() => handleToggleAddLogo()}
-					/>
-					<label htmlFor='addLogo' className='text-white'>
-						Adicionar logo
-					</label>
-				</div>
 			</div>
 		</div>
 	);

@@ -29,7 +29,7 @@ export default function Home() {
 
 			<div className='flex flex-col items-center gap-4 p-8'>
 				<h1 className='text-6xl font-bold dark:text-white text-black'>CodeCanvas</h1>
-				<p className='text-xl mb-8 dark:text-white text-black'>
+				<p className='md:text-xl text-md text-center mb-8 dark:text-white text-black'>
 					Bem-vindo ao CodeCanvas! Aqui você pode compartilhar trechos de código com outras pessoas!
 				</p>
 			</div>
