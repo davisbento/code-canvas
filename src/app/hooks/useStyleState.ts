@@ -1,7 +1,8 @@
-import { CSSProperties } from 'react';
 import { useRecoilState } from 'recoil';
 import { styleState } from '../states/style';
+import { setLanguagePreference } from '../utils/cookies';
 import { StyleOptionCss } from '../utils/stylesOptions';
+import { useCallback } from 'react';
 
 const useStyleState = () => {
 	const [styleAtom, setStyleAtom] = useRecoilState(styleState);
@@ -13,12 +14,17 @@ const useStyleState = () => {
 		});
 	};
 
-	const handlChangeLanguage = (language: string) => {
-		setStyleAtom({
-			...styleAtom,
-			language
-		});
-	};
+	const handleChangeLanguage = useCallback(
+		(language: string) => {
+			setLanguagePreference(language);
+
+			setStyleAtom({
+				...styleAtom,
+				language
+			});
+		},
+		[styleAtom, setStyleAtom]
+	);
 
 	const handleToggleAddLogo = () => {
 		setStyleAtom({
@@ -30,7 +36,7 @@ const useStyleState = () => {
 	return {
 		styleAtom,
 		handleChangeStyle,
-		handlChangeLanguage,
+		handleChangeLanguage,
 		handleToggleAddLogo
 	};
 };

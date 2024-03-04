@@ -1,4 +1,5 @@
 export const THEME_COOKIE_KEY = 'theme-preference';
+export const LANGUAGE_COOKIE_KEY = 'language-preference';
 
 export const getCookie = (name: string) => {
 	const match = document?.cookie.match(`;\\s*${name}=([^;]+)`);
@@ -20,4 +21,9 @@ export const setCookie = (name: string, value: string, days: number) => {
 
 export const deleteCookie = (name: string) => {
 	setCookie(name, '', -1);
+};
+
+export const setLanguagePreference = (language: string) => {
+	deleteCookie(LANGUAGE_COOKIE_KEY);
+	setCookie(LANGUAGE_COOKIE_KEY, language, 365);
 };

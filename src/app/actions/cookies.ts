@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { THEME_COOKIE_KEY } from '../utils/cookies';
+import { LANGUAGE_COOKIE_KEY, THEME_COOKIE_KEY } from '../utils/cookies';
 import { Theme } from '../utils/theme';
 
 /**
@@ -14,4 +14,11 @@ export const getThemeCookie = () => {
 	const theme = themePreference === 'dark' ? 'dark' : 'light';
 
 	return theme as Theme;
+};
+
+export const getLanguageCookie = () => {
+	const cookieStore = cookies();
+	const language = cookieStore.get(LANGUAGE_COOKIE_KEY)?.value || 'jsx';
+
+	return language;
 };

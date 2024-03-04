@@ -3,9 +3,23 @@
 import useStyleState from '@/app/hooks/useStyleState';
 
 import { languageOptions } from '@/app/utils/stylesOptions';
+import { useEffect, useState } from 'react';
 
-const LanguageSwitcher = () => {
-	const { styleAtom, handlChangeLanguage, handleToggleAddLogo } = useStyleState();
+type Props = {
+	language: string;
+};
+
+const LanguageSwitcher = ({ language }: Props) => {
+	const { styleAtom, handleChangeLanguage, handleToggleAddLogo } = useStyleState();
+
+	// just to hold the initial value from the cookies
+	const [langLocalState, setLangLocalState] = useState(language);
+
+	const handleChange = (value: string) => {
+		// update the local state and the cookie/global state
+		setLangLocalState(value);
+		handleChangeLanguage(value);
+	};
 
 	return (
 		<div className='flex items-center gap-4'>
@@ -17,8 +31,8 @@ const LanguageSwitcher = () => {
 					name='language'
 					id='language'
 					className='p-2 w-full bg-gray-800 text-white'
-					value={styleAtom.language}
-					onChange={(e) => handlChangeLanguage(e.target.value as string)}
+					value={langLocalState}
+					onChange={(e) => handleChange(e.target.value as string)}
 				>
 					{languageOptions.map((lang, index) => (
 						<option key={index} value={lang}>

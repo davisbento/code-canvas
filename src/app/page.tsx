@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import CodeDescription from './components/CodeForm/CodeDescription';
 import CodeSnippet from './components/CodeForm/CodeSnippet';
-import LanguageSwitcher from './components/CodeForm/LanguageSwitcher';
+import LanguageSwitcherWrapper from './components/CodeForm/LanguageSwitcher/LanguageSwitcherWrapper';
 import StyleSwitcher from './components/CodeForm/StyleSwitcher';
 import GenerateImageButton from './components/ActionButtons/GenerateImageButton';
 import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
@@ -37,7 +37,7 @@ export default function Home() {
 					<CodeContainer>
 						<div className='flex gap-4'>
 							<StyleSwitcher />
-							<LanguageSwitcher />
+							<LanguageSwitcherWrapper />
 						</div>
 
 						<CodeDescription />

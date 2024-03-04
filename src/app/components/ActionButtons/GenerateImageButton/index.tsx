@@ -27,7 +27,7 @@ const GenerateImageButton = () => {
 	return (
 		<button
 			disabled={exporting}
-			className='p-4 bg-slate-900 dark:bg-slate-200 dark:border-slate-200 border-slate-800 border-2 rounded-md disabled:opacity-50'
+			className='p-4 bg-slate-900 dark:bg-slate-200 dark:border-slate-200 border-slate-800 rounded-md disabled:opacity-50'
 			onClick={() => handleGenerateAndDownload()}
 		>
 			<span className='text-white dark:text-black'>Exportar</span>
