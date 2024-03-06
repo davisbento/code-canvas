@@ -5,7 +5,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 const LanguageSwitcherWrapper = () => {
 	const language = getLanguageCookie();
 
-	return <LanguageSwitcher language={language} />;
+	return <LanguageSwitcher languageFromCookies={language} />;
 };
 
 export default LanguageSwitcherWrapper;

@@ -6,20 +6,28 @@ import { languageOptions } from '@/app/utils/stylesOptions';
 import { useEffect, useState } from 'react';
 
 type Props = {
-	language: string;
+	languageFromCookies: string;
 };
 
-const LanguageSwitcher = ({ language }: Props) => {
+const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 	const { styleAtom, handleChangeLanguage, handleToggleAddLogo } = useStyleState();
 
 	// just to hold the initial value from the cookies
-	const [langLocalState, setLangLocalState] = useState(language);
+	const [langLocalState, setLangLocalState] = useState(languageFromCookies);
 
 	const handleChange = (value: string) => {
 		// update the local state and the cookie/global state
 		setLangLocalState(value);
 		handleChangeLanguage(value);
 	};
+
+	useEffect(() => {
+		if (languageFromCookies) {
+			handleChangeLanguage(languageFromCookies);
+		}
+		// only run once to update
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className='flex items-center gap-4'>

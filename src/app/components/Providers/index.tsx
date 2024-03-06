@@ -3,6 +3,9 @@
 import { Theme } from '@/app/utils/theme';
 import { RecoilRoot } from 'recoil';
 import ThemeProvider from './ThemeProvider';
+import { Analytics } from '@vercel/analytics/react';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 type Props = {
 	children: React.ReactNode;
@@ -12,6 +15,7 @@ type Props = {
 const Providers = ({ children, theme }: Props) => {
 	return (
 		<ThemeProvider theme={theme}>
+			{isProd ? <Analytics /> : null}
 			<RecoilRoot>{children}</RecoilRoot>
 		</ThemeProvider>
 	);
