@@ -33,11 +33,19 @@ const useStyleState = () => {
 		});
 	};
 
+	const handleChangePersonalLogo = (personalLogo: string) => {
+		setStyleAtom({
+			...styleAtom,
+			personalLogo
+		});
+	};
+
 	return {
 		styleAtom,
 		handleChangeStyle,
 		handleChangeLanguage,
-		handleToggleAddLogo
+		handleToggleAddLogo,
+		handleChangePersonalLogo
 	};
 };
 

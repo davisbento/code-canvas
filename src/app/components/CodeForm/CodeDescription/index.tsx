@@ -6,7 +6,7 @@ const CodeDescription = () => {
 	const { codeAtom, handleChangeDescription } = useCodeState();
 
 	return (
-		<div className='p-2 rounded-md dark:bg-gray-200 bg-gray-700 w-full'>
+		<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700 w-full'>
 			<label className='sr-only' htmlFor='description'>
 				Descrição
 			</label>

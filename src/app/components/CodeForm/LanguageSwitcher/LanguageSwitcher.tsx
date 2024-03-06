@@ -35,6 +35,7 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 				<label className='sr-only' htmlFor='language'>
 					Linguagem
 				</label>
+
 				<select
 					name='language'
 					id='language'

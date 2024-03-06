@@ -1,11 +1,19 @@
 import { atom } from 'recoil';
-import { styleOptions } from '../utils/stylesOptions';
+import { StyleOptionCss, styleOptions } from '../utils/stylesOptions';
 
-export const styleState = atom({
+type StyleState = {
+	highliterStyle: StyleOptionCss;
+	language: string;
+	addLogo: boolean;
+	personalLogo: string | null;
+};
+
+export const styleState = atom<StyleState>({
 	key: 'styleState',
 	default: {
 		highliterStyle: styleOptions.okaida,
 		language: '',
-		addLogo: false
+		addLogo: false,
+		personalLogo: null
 	}
 });

@@ -2,7 +2,7 @@ import useStyleState from '@/app/hooks/useStyleState';
 import { FaJs, FaReact } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
 
-const LogoFinder = () => {
+const LanguageLogoFinder = () => {
 	const {
 		styleAtom: { language, addLogo }
 	} = useStyleState();
@@ -25,7 +25,7 @@ const LogoFinder = () => {
 		return null;
 	};
 
-	return <div className='absolute top-9 right-8'>{getLogo()}</div>;
+	return <div className='absolute top-4 right-6'>{getLogo()}</div>;
 };
 
-export default LogoFinder;
+export default LanguageLogoFinder;

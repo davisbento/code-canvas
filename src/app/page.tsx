@@ -7,6 +7,7 @@ import GenerateImageButton from './components/ActionButtons/GenerateImageButton'
 import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcherButton from './components/ThemeSwitcherButton';
+import PersonalLogoUploader from './components/CodeForm/PersonalLogoUploader';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;
@@ -42,6 +43,9 @@ export default function Home() {
 
 						<CodeDescription />
 
+						{/* <div className='w-1/5'>
+								<PersonalLogoUploader />
+							</div> */}
 						<CodeSnippet />
 					</CodeContainer>
 
