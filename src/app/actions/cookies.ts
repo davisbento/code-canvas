@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { LANGUAGE_COOKIE_KEY, THEME_COOKIE_KEY } from '../utils/cookies';
+import { LANGUAGE_COOKIE_KEY, STYLE_COOKIE_KEY, THEME_COOKIE_KEY } from '../utils/cookies';
 import { Theme } from '../utils/theme';
 
 /**
@@ -21,4 +21,11 @@ export const getLanguageCookie = () => {
 	const language = cookieStore.get(LANGUAGE_COOKIE_KEY)?.value || 'jsx';
 
 	return language;
+};
+
+export const getStyleCookie = () => {
+	const cookieStore = cookies();
+	const style = cookieStore.get(STYLE_COOKIE_KEY)?.value || 'dracula';
+
+	return style;
 };

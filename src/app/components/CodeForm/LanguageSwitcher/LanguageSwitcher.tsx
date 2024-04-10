@@ -43,11 +43,13 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 					value={langLocalState}
 					onChange={(e) => handleChange(e.target.value as string)}
 				>
-					{languageOptions.map((lang, index) => (
-						<option key={index} value={lang}>
-							{lang}
-						</option>
-					))}
+					{languageOptions
+						.sort((a, b) => a.localeCompare(b))
+						.map((lang, index) => (
+							<option key={index} value={lang}>
+								{lang}
+							</option>
+						))}
 				</select>
 			</div>
 

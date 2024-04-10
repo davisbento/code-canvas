@@ -8,24 +8,17 @@ import PersonalLogoFinder from '../PersonalLogoFinder';
 
 const SyntaxHighlighterSnippet = () => {
 	const { codeAtom } = useCodeState();
-	const { styleAtom } = useStyleState();
+	const { styleAtom, getCurrentStyle } = useStyleState();
 
 	return (
-		<div id='image-to-generate' className='p-4 rounded-lg bg-yellow-50 lg:w-2/3 w-full '>
+		<div id='image-to-generate' className='p-3 rounded-lg bg-yellow-50 lg:w-2/3 w-full '>
 			{codeAtom.description && <p className='text-2xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
 
 			<div className='relative'>
 				<LanguageLogoFinder />
 				<PersonalLogoFinder />
 
-				<SyntaxHighlighter
-					language={styleAtom.language}
-					style={styleAtom.highliterStyle}
-					wrapLines
-					customStyle={{
-						borderRadius: '0.5rem'
-					}}
-				>
+				<SyntaxHighlighter showLineNumbers language={styleAtom.language} style={getCurrentStyle} wrapLines>
 					{codeAtom.code || 'Hello World!'}
 				</SyntaxHighlighter>
 			</div>

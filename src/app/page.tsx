@@ -1,13 +1,12 @@
 import { PropsWithChildren } from 'react';
+import GenerateImageButton from './components/ActionButtons/GenerateImageButton';
+import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
 import CodeDescription from './components/CodeForm/CodeDescription';
 import CodeSnippet from './components/CodeForm/CodeSnippet';
 import LanguageSwitcherWrapper from './components/CodeForm/LanguageSwitcher/LanguageSwitcherWrapper';
-import StyleSwitcher from './components/CodeForm/StyleSwitcher';
-import GenerateImageButton from './components/ActionButtons/GenerateImageButton';
-import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
+import StyleSwitcherWrapper from './components/CodeForm/StyleSwitcher/StyleSwitcherWrapper';
 import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
 import ThemeSwitcherButton from './components/ThemeSwitcherButton';
-import PersonalLogoUploader from './components/CodeForm/PersonalLogoUploader';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;
@@ -37,7 +36,7 @@ export default function Home() {
 				<div className='flex md:flex-row flex-col items-center gap-4 w-full'>
 					<CodeContainer>
 						<div className='flex gap-4'>
-							<StyleSwitcher />
+							<StyleSwitcherWrapper />
 							<LanguageSwitcherWrapper />
 						</div>
 

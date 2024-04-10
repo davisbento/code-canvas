@@ -3,6 +3,7 @@
 import useStyleState from '@/app/hooks/useStyleState';
 
 import { styleOptions } from '@/app/utils/stylesOptions';
+import { useEffect, useState } from 'react';
 
 const transformStyleText = (style: string) => {
 	// break the camelCase and capitalize the first letter
@@ -11,8 +12,29 @@ const transformStyleText = (style: string) => {
 	return capitalizedWords.join(' ');
 };
 
-const StyleSwitcher = () => {
+type Props = {
+	styleFromCookies: string;
+};
+
+const StyleSwitcher = ({ styleFromCookies }: Props) => {
 	const { styleAtom, handleChangeStyle } = useStyleState();
+
+	// just to hold the initial value from the cookies
+	const [styleLocalState, setStyleLocalState] = useState(styleFromCookies);
+
+	const handleChange = (value: string) => {
+		// update the local state and the cookie/global state
+		setStyleLocalState(value);
+		handleChangeStyle(value);
+	};
+
+	useEffect(() => {
+		if (styleFromCookies) {
+			handleChangeStyle(styleFromCookies);
+		}
+		// only run once to update
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700 w-48'>
@@ -23,8 +45,8 @@ const StyleSwitcher = () => {
 				name='style'
 				id='style'
 				className='p-2 w-full bg-gray-800 text-white'
-				value={Object.keys(styleOptions).find((style) => styleOptions[style] === styleAtom.highliterStyle)}
-				onChange={(e) => handleChangeStyle(styleOptions[e.target.value])}
+				value={styleLocalState}
+				onChange={(e) => handleChange(e.target.value)}
 			>
 				{Object.keys(styleOptions).map((style, index) => (
 					<option key={index} value={style}>

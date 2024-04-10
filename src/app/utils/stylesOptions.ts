@@ -31,6 +31,7 @@ export const languageOptions = [
 	'python',
 	'css',
 	'html',
+	'sql',
 	'json',
 	'markdown',
 	'bash',

@@ -1,13 +1,15 @@
+import { useCallback, useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 import { styleState } from '../states/style';
-import { setLanguagePreference } from '../utils/cookies';
-import { StyleOptionCss } from '../utils/stylesOptions';
-import { useCallback } from 'react';
+import { setLanguagePreference, setStylePreference } from '../utils/cookies';
+import { styleOptions } from '../utils/stylesOptions';
 
 const useStyleState = () => {
 	const [styleAtom, setStyleAtom] = useRecoilState(styleState);
 
-	const handleChangeStyle = (style: StyleOptionCss) => {
+	const handleChangeStyle = (style: string) => {
+		setStylePreference(style);
+
 		setStyleAtom({
 			...styleAtom,
 			highliterStyle: style
@@ -40,12 +42,17 @@ const useStyleState = () => {
 		});
 	};
 
+	const getCurrentStyle = useMemo(() => {
+		return styleOptions[styleAtom.highliterStyle];
+	}, [styleAtom.highliterStyle]);
+
 	return {
 		styleAtom,
 		handleChangeStyle,
 		handleChangeLanguage,
 		handleToggleAddLogo,
-		handleChangePersonalLogo
+		handleChangePersonalLogo,
+		getCurrentStyle
 	};
 };
 

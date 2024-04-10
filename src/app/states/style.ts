@@ -2,7 +2,7 @@ import { atom } from 'recoil';
 import { StyleOptionCss, styleOptions } from '../utils/stylesOptions';
 
 type StyleState = {
-	highliterStyle: StyleOptionCss;
+	highliterStyle: keyof StyleOptionCss;
 	language: string;
 	addLogo: boolean;
 	personalLogo: string | null;
@@ -11,7 +11,7 @@ type StyleState = {
 export const styleState = atom<StyleState>({
 	key: 'styleState',
 	default: {
-		highliterStyle: styleOptions.okaida,
+		highliterStyle: 'dracula',
 		language: '',
 		addLogo: false,
 		personalLogo: null
