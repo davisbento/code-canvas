@@ -1,8 +1,8 @@
 'use client';
 
-import useCodeState from '@/app/hooks/useCodeState';
-import useStyleState from '@/app/hooks/useStyleState';
-import { formatCode } from '@/app/utils/formatCode';
+import useCodeState from '@/hooks/useCodeState';
+import useStyleState from '@/hooks/useStyleState';
+import { formatCode } from '@/utils/formatCode';
 
 const allowedLanguages = ['javascript', 'typescript', 'jsx', 'tsx', 'css', 'scss', 'html', 'json'];
 

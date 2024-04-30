@@ -1,10 +1,10 @@
+import Providers from '@/components/Providers';
+import { Theme } from '@/utils/theme';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import { getThemeCookie } from './actions/cookies';
-import Providers from './components/Providers';
-import './globals.css';
-import { Theme } from './utils/theme';
 import { PropsWithChildren } from 'react';
+import { getThemeCookie } from './actions/cookies';
+import './globals.css';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '400' });
 

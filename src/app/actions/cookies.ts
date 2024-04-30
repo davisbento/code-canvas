@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
-import { BG_COLOR_COOKIE_KEY, LANGUAGE_COOKIE_KEY, STYLE_COOKIE_KEY, THEME_COOKIE_KEY } from '../utils/cookies';
-import { Theme } from '../utils/theme';
+import { BG_COLOR_COOKIE_KEY, LANGUAGE_COOKIE_KEY, STYLE_COOKIE_KEY, THEME_COOKIE_KEY } from '../../utils/cookies';
+import { Theme } from '../../utils/theme';
 
 /**
  * Get the theme preference from the cookie store.

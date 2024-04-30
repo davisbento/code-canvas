@@ -1,7 +1,7 @@
 'use client';
 
-import useStyleState from '@/app/hooks/useStyleState';
-import React, { ChangeEvent } from 'react';
+import useStyleState from '@/hooks/useStyleState';
+import { ChangeEvent } from 'react';
 import { MdUploadFile } from 'react-icons/md';
 
 const PersonalLogoUploader = () => {

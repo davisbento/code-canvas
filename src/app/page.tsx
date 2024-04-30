@@ -1,13 +1,14 @@
+import GenerateImageButton from '@/components/ActionButtons/GenerateImageButton';
+import PrettifyCodeButton from '@/components/ActionButtons/PrettifyCodeButton';
+import BgColorSwitcher from '@/components/CodeForm/BgColorSwitcher';
+import CodeDescription from '@/components/CodeForm/CodeDescription';
+import CodeSnippet from '@/components/CodeForm/CodeSnippet';
+import LanguageSwitcherWrapper from '@/components/CodeForm/LanguageSwitcher/LanguageSwitcherWrapper';
+import StyleSwitcherWrapper from '@/components/CodeForm/StyleSwitcher/StyleSwitcherWrapper';
+import SyntaxHighlighterSnippet from '@/components/SyntaxHighlighterSnippet';
+import ThemeSwitcherButton from '@/components/ThemeSwitcherButton';
+
 import { PropsWithChildren } from 'react';
-import GenerateImageButton from './components/ActionButtons/GenerateImageButton';
-import PrettifyCodeButton from './components/ActionButtons/PrettifyCodeButton';
-import BgColorSwitcher from './components/CodeForm/BgColorSwitcher';
-import CodeDescription from './components/CodeForm/CodeDescription';
-import CodeSnippet from './components/CodeForm/CodeSnippet';
-import LanguageSwitcherWrapper from './components/CodeForm/LanguageSwitcher/LanguageSwitcherWrapper';
-import StyleSwitcherWrapper from './components/CodeForm/StyleSwitcher/StyleSwitcherWrapper';
-import SyntaxHighlighterSnippet from './components/SyntaxHighlighterSnippet';
-import ThemeSwitcherButton from './components/ThemeSwitcherButton';
 
 const Container = ({ children }: PropsWithChildren) => {
 	return <div className='flex flex-col gap-8 md:w-3/4 w-full md:px-0 px-4 pb-8'>{children}</div>;

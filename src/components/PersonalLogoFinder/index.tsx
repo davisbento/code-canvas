@@ -1,4 +1,4 @@
-import useStyleState from '@/app/hooks/useStyleState';
+import useStyleState from '@/hooks/useStyleState';
 import Image from 'next/image';
 
 const PersonalLogoFinder = () => {

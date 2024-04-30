@@ -1,8 +1,8 @@
 'use client';
 
-import useStyleState from '@/app/hooks/useStyleState';
+import useStyleState from '@/hooks/useStyleState';
 
-import { styleOptions } from '@/app/utils/stylesOptions';
+import { styleOptions } from '@/utils/stylesOptions';
 import { useEffect, useState } from 'react';
 
 const transformStyleText = (style: string) => {

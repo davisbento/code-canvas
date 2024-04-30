@@ -1,9 +1,9 @@
 'use client';
 
-import { Theme } from '@/app/utils/theme';
+import { Theme } from '@/utils/theme';
+import { Analytics } from '@vercel/analytics/react';
 import { RecoilRoot } from 'recoil';
 import ThemeProvider from './ThemeProvider';
-import { Analytics } from '@vercel/analytics/react';
 
 const isProd = process.env.NODE_ENV === 'production';
 

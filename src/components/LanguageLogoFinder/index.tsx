@@ -1,4 +1,4 @@
-import useStyleState from '@/app/hooks/useStyleState';
+import useStyleState from '@/hooks/useStyleState';
 import { FaJs, FaReact } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
 

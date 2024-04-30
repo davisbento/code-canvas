@@ -1,9 +1,7 @@
 'use client';
 
-import useCodeState from '@/app/hooks/useCodeState';
-import useStyleState from '@/app/hooks/useStyleState';
-import { BG_COLOR_COOKIE_KEY, getCookie } from '@/app/utils/cookies';
-import { useEffect } from 'react';
+import useCodeState from '@/hooks/useCodeState';
+import useStyleState from '@/hooks/useStyleState';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import LanguageLogoFinder from '../LanguageLogoFinder';
 import PersonalLogoFinder from '../PersonalLogoFinder';
@@ -13,17 +11,6 @@ const SyntaxHighlighterSnippet = () => {
 	const { styleAtom, getCurrentStyle, handleChangeBgColor } = useStyleState();
 
 	const bgColor = styleAtom.bgColor;
-
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			const colorFromCookie = getCookie(BG_COLOR_COOKIE_KEY);
-			if (colorFromCookie) {
-				handleChangeBgColor(colorFromCookie);
-			}
-		}
-		// only run once to update
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
 
 	return (
 		<div id='image-to-generate' className={`p-3 rounded-lg ${bgColor} lg:w-2/3 w-full`}>

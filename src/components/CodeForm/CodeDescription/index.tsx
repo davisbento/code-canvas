@@ -1,6 +1,6 @@
 'use client';
 
-import useCodeState from '@/app/hooks/useCodeState';
+import useCodeState from '@/hooks/useCodeState';
 
 const CodeDescription = () => {
 	const { codeAtom, handleChangeDescription } = useCodeState();

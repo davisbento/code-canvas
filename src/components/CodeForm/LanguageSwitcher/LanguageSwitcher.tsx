@@ -1,8 +1,8 @@
 'use client';
 
-import useStyleState from '@/app/hooks/useStyleState';
+import useStyleState from '@/hooks/useStyleState';
 
-import { languageOptions } from '@/app/utils/stylesOptions';
+import { languageOptions } from '@/utils/stylesOptions';
 import { useEffect, useState } from 'react';
 
 type Props = {

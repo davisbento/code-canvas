@@ -1,6 +1,6 @@
 'use client';
 
-import { generateImageFromHTML } from '@/app/utils/generateImage';
+import { generateImageFromHTML } from '@/utils/generateImage';
 import { useState } from 'react';
 
 const GenerateImageButton = () => {

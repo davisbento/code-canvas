@@ -1,8 +1,8 @@
 'use client';
 
-import ThemeContext from '@/app/states/theme';
-import { THEME_COOKIE_KEY } from '@/app/utils/cookies';
-import { Theme, getColors, getPreference, setPreference } from '@/app/utils/theme';
+import ThemeContext from '@/states/theme';
+import { THEME_COOKIE_KEY } from '@/utils/cookies';
+import { Theme, getColors, getPreference, setPreference } from '@/utils/theme';
 import React, { useCallback, useState } from 'react';
 
 const color = getColors();
