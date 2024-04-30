@@ -5,10 +5,6 @@ import useStyleState from '@/app/hooks/useStyleState';
 import { useEffect, useRef, useState } from 'react';
 import ColorTag from './ColorTag';
 
-type Props = {
-	colorFromCookie: string;
-};
-
 const generateColors = () => {
 	const baseColors = ['blue', 'red', 'yellow', 'green', 'purple'];
 	const baseWeights = ['50', '100', '500'];
@@ -24,19 +20,14 @@ const generateColors = () => {
 	return colorOptions;
 };
 
-const BgColorSwitcher = ({ colorFromCookie }: Props) => {
-	const { handleChangeBgColor } = useStyleState();
+const BgColorSwitcher = () => {
+	const { handleChangeBgColor, styleAtom } = useStyleState();
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const btnRef = useRef<HTMLButtonElement>(null);
-
-	// just to hold the initial value from the cookies
-	const [colorLocalState, setColorLocalState] = useState(colorFromCookie);
 
 	const colorOptions = generateColors();
 
 	const handleChange = (value: string) => {
-		// update the local state and the cookie/global state
-		setColorLocalState(value);
 		handleChangeBgColor(value);
 	};
 
@@ -45,14 +36,6 @@ const BgColorSwitcher = ({ colorFromCookie }: Props) => {
 			setIsDropdownOpen(false);
 		}
 	};
-
-	useEffect(() => {
-		if (colorFromCookie) {
-			handleChangeBgColor(colorFromCookie);
-		}
-		// only run once to update
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
 
 	useEffect(() => {
 		document.addEventListener('click', handleCloseOnOutsideClick);
@@ -70,7 +53,7 @@ const BgColorSwitcher = ({ colorFromCookie }: Props) => {
 				onClick={() => setIsDropdownOpen(!isDropdownOpen)}
 				type='button'
 			>
-				<ColorTag color={colorLocalState} />
+				<ColorTag color={styleAtom?.bgColor} />
 			</button>
 
 			<div
