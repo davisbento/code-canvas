@@ -41,10 +41,11 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 			<label className='sr-only' htmlFor='style'>
 				Estilo
 			</label>
+
 			<select
 				name='style'
 				id='style'
-				className='p-2 w-full bg-gray-800 text-white'
+				className='p-2 h-full w-full bg-gray-800 text-white'
 				value={styleLocalState}
 				onChange={(e) => handleChange(e.target.value)}
 			>

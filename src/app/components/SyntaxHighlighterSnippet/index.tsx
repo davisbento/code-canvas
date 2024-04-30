@@ -8,10 +8,20 @@ import PersonalLogoFinder from '../PersonalLogoFinder';
 
 const SyntaxHighlighterSnippet = () => {
 	const { codeAtom } = useCodeState();
-	const { styleAtom, getCurrentStyle } = useStyleState();
+	const { styleAtom, getCurrentStyle, handleChangeBgColor } = useStyleState();
+
+	const bgColor = styleAtom.bgColor;
+
+	// useEffect(() => {
+	// 	if (colorFromCookie) {
+	// 		handleChangeBgColor(colorFromCookie);
+	// 	}
+	// 	// only run once to update
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
 	return (
-		<div id='image-to-generate' className='p-3 rounded-lg bg-yellow-50 lg:w-2/3 w-full '>
+		<div id='image-to-generate' className={`p-3 rounded-lg ${bgColor} lg:w-2/3 w-full`}>
 			{codeAtom.description && <p className='text-2xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
 
 			<div className='relative'>

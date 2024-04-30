@@ -1,4 +1,4 @@
-import { getLanguageCookie, getStyleCookie } from '@/app/actions/cookies';
+import { getStyleCookie } from '@/app/actions/cookies';
 import StyleSwitcher from '.';
 
 // server side rendering wrapper

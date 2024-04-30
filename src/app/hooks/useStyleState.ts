@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 import { styleState } from '../states/style';
-import { setLanguagePreference, setStylePreference } from '../utils/cookies';
+import { setBgColorPreference, setLanguagePreference, setStylePreference } from '../utils/cookies';
 import { styleOptions } from '../utils/stylesOptions';
 
 const useStyleState = () => {
@@ -13,6 +13,15 @@ const useStyleState = () => {
 		setStyleAtom({
 			...styleAtom,
 			highliterStyle: style
+		});
+	};
+
+	const handleChangeBgColor = (bgColor: string) => {
+		setBgColorPreference(bgColor);
+
+		setStyleAtom({
+			...styleAtom,
+			bgColor
 		});
 	};
 
@@ -49,6 +58,7 @@ const useStyleState = () => {
 	return {
 		styleAtom,
 		handleChangeStyle,
+		handleChangeBgColor,
 		handleChangeLanguage,
 		handleToggleAddLogo,
 		handleChangePersonalLogo,
