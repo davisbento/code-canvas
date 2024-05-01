@@ -52,7 +52,7 @@ const BgColorSwitcher = () => {
 	}, []);
 
 	return (
-		<div className='relative w-12 h-12'>
+		<div className='relative'>
 			<div ref={divRef}>
 				<ColorTag onClick={() => setIsDropdownOpen(!isDropdownOpen)} color={styleAtom?.bgColor} />
 			</div>

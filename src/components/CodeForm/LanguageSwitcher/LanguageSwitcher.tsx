@@ -31,7 +31,7 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 
 	return (
 		<div className='flex items-center gap-4'>
-			<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700'>
+			<div className='p-1 rounded-md border-2 border-white'>
 				<label className='sr-only' htmlFor='language'>
 					Linguagem
 				</label>

@@ -6,10 +6,11 @@ const CodeSnippet = ({}) => {
 	const { handleChangeCode, codeAtom } = useCodeState();
 
 	return (
-		<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700 w-full'>
+		<div className='p-1 rounded-md border-2 border-white w-full'>
 			<label className='sr-only' htmlFor='code'>
 				Código
 			</label>
+
 			<textarea
 				name='code'
 				id='code'
@@ -30,7 +31,7 @@ const CodeSnippet = ({}) => {
 						e.currentTarget.selectionStart = e.currentTarget.selectionEnd = start + 1;
 					}
 				}}
-				className='w-full h-64 p-4 text-lg text-white focus:outline-none bg-gray-800'
+				className='w-full h-60 p-4 text-lg text-white font-mono focus:outline-none bg-gray-800'
 			/>
 		</div>
 	);

@@ -37,7 +37,7 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 	}, []);
 
 	return (
-		<div className='p-1 rounded-md dark:bg-gray-200 bg-gray-700 w-48'>
+		<div className='p-1 rounded-md border-2 border-white w-48'>
 			<label className='sr-only' htmlFor='style'>
 				Estilo
 			</label>

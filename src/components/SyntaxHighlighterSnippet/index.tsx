@@ -8,7 +8,7 @@ import PersonalLogoFinder from '../PersonalLogoFinder';
 
 const SyntaxHighlighterSnippet = () => {
 	const { codeAtom } = useCodeState();
-	const { styleAtom, getCurrentStyle, handleChangeBgColor } = useStyleState();
+	const { styleAtom, getCurrentStyle } = useStyleState();
 
 	const bgColor = styleAtom.bgColor;
 

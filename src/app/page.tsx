@@ -31,7 +31,9 @@ export default function Home() {
 
 			<div className='flex flex-col items-center gap-4 md:pb-16 pb-8'>
 				<h1 className='md:text-6xl text-5xl font-bold dark:text-white text-black'>CodeCanvas</h1>
-				<p>Bem-vindo ao CodeCanvas! Aqui você pode gerar imagens de código com destaque de sintaxe</p>
+				<p className='md:text-xl text-md text-center dark:text-white text-black md:w-1/2 w-full'>
+					Bem-vindo ao CodeCanvas! Aqui você pode gerar imagens de código com destaque de sintaxe
+				</p>
 			</div>
 
 			<Container>
