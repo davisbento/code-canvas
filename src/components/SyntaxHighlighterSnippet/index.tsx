@@ -13,14 +13,20 @@ const SyntaxHighlighterSnippet = () => {
 	const bgColor = styleAtom.bgColor;
 
 	return (
-		<div id='image-to-generate' className={`p-3 rounded-lg ${bgColor} lg:w-2/3 w-full`}>
-			{codeAtom.description && <p className='text-2xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
+		<div id='image-to-generate' className={`p-8 rounded-lg ${bgColor} w-full`}>
+			{codeAtom.description && <p className='text-xl text-[#3e2723] text-center'>{codeAtom.description}</p>}
 
-			<div className='relative'>
+			<div className='relative text-sm'>
 				<LanguageLogoFinder />
 				<PersonalLogoFinder />
 
-				<SyntaxHighlighter showLineNumbers language={styleAtom.language} style={getCurrentStyle} wrapLines>
+				<SyntaxHighlighter
+					showLineNumbers
+					language={styleAtom.language}
+					style={getCurrentStyle}
+					wrapLines
+					wrapLongLines
+				>
 					{codeAtom.code || 'Hello World!'}
 				</SyntaxHighlighter>
 			</div>

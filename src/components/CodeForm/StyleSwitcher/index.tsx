@@ -36,8 +36,10 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	const alphabeticallySortedStyles = Object.keys(styleOptions).sort((a, b) => a.localeCompare(b));
+
 	return (
-		<div className='p-1 rounded-md border-2 border-white w-48'>
+		<div className='px-1 rounded-md border-2 border-white w-36'>
 			<label className='sr-only' htmlFor='style'>
 				Estilo
 			</label>
@@ -49,7 +51,7 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 				value={styleLocalState}
 				onChange={(e) => handleChange(e.target.value)}
 			>
-				{Object.keys(styleOptions).map((style, index) => (
+				{alphabeticallySortedStyles.map((style, index) => (
 					<option key={index} value={style}>
 						{transformStyleText(style)}
 					</option>

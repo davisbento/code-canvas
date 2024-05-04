@@ -1,13 +1,19 @@
 import { CSSProperties } from 'react';
 import {
-	okaidia,
+	a11yDark,
+	atomDark,
 	dracula,
+	duotoneDark,
 	gruvboxDark,
 	gruvboxLight,
-	atomDark,
-	tomorrow,
 	materialDark,
-	materialLight
+	materialLight,
+	nord,
+	okaidia,
+	oneDark,
+	oneLight,
+	solarizedlight,
+	tomorrow
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export type StyleOptionCss = Record<string, CSSProperties>;
@@ -21,7 +27,13 @@ export const styleOptions: StyleOption = {
 	atomDark: atomDark,
 	tomorrow: tomorrow,
 	materialDark: materialDark,
-	materialLight: materialLight
+	materialLight: materialLight,
+	solarizedlight: solarizedlight,
+	nord: nord,
+	oneDark: oneDark,
+	oneLight: oneLight,
+	duotoneDark: duotoneDark,
+	a11yDark: a11yDark
 };
 
 export const languageOptions = [
