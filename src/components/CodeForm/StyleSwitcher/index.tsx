@@ -39,7 +39,7 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 	const alphabeticallySortedStyles = Object.keys(styleOptions).sort((a, b) => a.localeCompare(b));
 
 	return (
-		<div className='px-1 rounded-md border-2 border-white w-36'>
+		<div>
 			<label className='sr-only' htmlFor='style'>
 				Estilo
 			</label>
@@ -47,7 +47,7 @@ const StyleSwitcher = ({ styleFromCookies }: Props) => {
 			<select
 				name='style'
 				id='style'
-				className='p-2 h-full w-full bg-gray-800 text-white'
+				className='rounded-lg border-2 dark:border-white border-black p-2 h-full w-full dark:bg-gray-800 dark:text-white text-black'
 				value={styleLocalState}
 				onChange={(e) => handleChange(e.target.value)}
 			>

@@ -4,7 +4,7 @@ type Props = {
 };
 
 const ColorTag = ({ color, onClick }: Props) => {
-	return <div className={`w-12 h-12 cursor-pointer rounded-md ${color}`} onClick={() => onClick(color)} />;
+	return <div className={`w-12 h-12 cursor-pointer rounded-lg ${color}`} onClick={() => onClick(color)} />;
 };
 
 export default ColorTag;

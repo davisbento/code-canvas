@@ -58,7 +58,7 @@ const BgColorSwitcher = () => {
 			</div>
 
 			{isDropdownOpen && (
-				<div className='absolute top-14 left-0 z-10 bg-gray-800 border-white border-2 p-2 rounded-md'>
+				<div className='absolute top-14 left-0 z-10 dark:bg-gray-800 bg-gray-300 dark:border-white border-black border-2 p-2 rounded-lg'>
 					<div className='grid grid-cols-3 gap-2 min-w-40'>
 						{Object.keys(colorVariants).map((color) => (
 							<ColorTag key={color} color={color} onClick={() => handleChange(color)} />

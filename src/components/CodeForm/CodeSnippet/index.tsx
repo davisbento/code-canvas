@@ -6,7 +6,7 @@ const CodeSnippet = ({}) => {
 	const { handleChangeCode, codeAtom } = useCodeState();
 
 	return (
-		<div className='rounded-md border-2 border-white w-full'>
+		<div>
 			<label className='sr-only' htmlFor='code'>
 				Código
 			</label>
@@ -14,7 +14,7 @@ const CodeSnippet = ({}) => {
 			<textarea
 				name='code'
 				id='code'
-				className='w-full h-60 p-2 text-md text-white font-mono focus:outline-none bg-gray-800'
+				className='w-full h-60 rounded-lg border-2 dark:border-white border-gray-900 p-2 text-md dark:text-white text-black focus:outline-none dark:bg-gray-800'
 				placeholder='Digite seu código aqui...'
 				value={codeAtom.code}
 				onChange={(e) => handleChangeCode(e.target.value)}

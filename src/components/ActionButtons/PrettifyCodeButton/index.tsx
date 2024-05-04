@@ -18,7 +18,7 @@ const PrettifyCodeButton = () => {
 	return (
 		<button
 			disabled={!allowedLanguages.includes(styleAtom.language)}
-			className='p-2 border-yellow-100 bg-yellow-200 h-12 rounded-md disabled:opacity-50'
+			className='p-2 border-yellow-100 bg-yellow-200 h-12 rounded-lg disabled:opacity-50'
 			onClick={() => handleMakeCodePretty()}
 		>
 			<span className='text-black text-sm'>Prettify</span>

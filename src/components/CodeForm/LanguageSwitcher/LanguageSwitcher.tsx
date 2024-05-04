@@ -31,7 +31,7 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 
 	return (
 		<div className='flex items-center gap-4'>
-			<div className='px-1 h-full rounded-md border-2 border-white'>
+			<div>
 				<label className='sr-only' htmlFor='language'>
 					Linguagem
 				</label>
@@ -39,7 +39,7 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 				<select
 					name='language'
 					id='language'
-					className='p-2 h-full w-full bg-gray-800 text-white'
+					className='h-full rounded-lg border-2 dark:border-white  border-black p-2 w-full dark:bg-gray-800 dark:text-white text-black'
 					value={langLocalState}
 					onChange={(e) => handleChange(e.target.value as string)}
 				>
@@ -58,7 +58,7 @@ const LanguageSwitcher = ({ languageFromCookies }: Props) => {
 					type='checkbox'
 					id='addLogo'
 					name='addLogo'
-					className='rounded-md'
+					className='rounded-lg'
 					checked={styleAtom.addLogo}
 					onChange={() => handleToggleAddLogo()}
 				/>

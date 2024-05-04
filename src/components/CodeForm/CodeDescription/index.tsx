@@ -6,14 +6,15 @@ const CodeDescription = () => {
 	const { codeAtom, handleChangeDescription } = useCodeState();
 
 	return (
-		<div className='rounded-md border-2 border-white w-full'>
+		<div>
 			<label className='sr-only' htmlFor='description'>
 				Descrição
 			</label>
+
 			<input
 				name='description'
 				id='description'
-				className='w-full p-2 text-md font-mono text-white focus:outline-none overflow-hidden bg-gray-800'
+				className='w-full rounded-lg border-2 dark:border-white border-gray-900 p-2 text-md dark:text-white text-black focus:outline-none dark:bg-gray-800'
 				type='text'
 				placeholder='Descrição do código (opcional)'
 				value={codeAtom?.description || ''}
